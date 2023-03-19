@@ -1,25 +1,16 @@
+<div class="container">
 <div class="min-w-full">
   <% if notice.present? %>
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
-
-  <div class="flex justify-between items-center">
+<div class="flex justify-between items-center">
     <h1 class="font-bold text-4xl">Posts</h1>
   </div>
-
-
-
-  <div id="posts" class="min-w-full"> 
+<div id="posts" class="min-w-full"> 
     <%= render @posts %>
   </div>
-
-
 </div>
-
-
-
-
-
+</div>
 <div>
   <h1 class="font-bold text-4xl text-blue-500">Project Status:</h1><br>
     <div id="options" data-controller="visibility">
@@ -27,10 +18,9 @@
       <h2 data-visibility-target="hideable" hidden class="font-bold text-4xl text-blue-300">Project Ongoing<h2/>
       <br>
       <button class="rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium"  data-action="visibility#toggleTargets">Click to change status</button><br>
-      <%= link_to 'New post', new_post_path, class: "flex-none w-24 rounded-md py-3 px-5 bg-blue-600 text-white block font-medium" %>
+      <%= link_to 'New post', new_post_path, class: "inline-block rounded-lg py-3 px-5 bg-blue-600 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]" %>
     </div>
 </div>
-
 <div>
 </div>
 
