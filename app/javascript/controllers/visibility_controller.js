@@ -2,6 +2,7 @@
 
 import { Controller } from "@hotwired/stimulus"
 
+
 export default class extends Controller {
   static targets = [ "hideable" ]
 
@@ -21,5 +22,8 @@ export default class extends Controller {
     this.hideableTargets.forEach((el) => {
       el.hidden = !el.hidden
     });
+  }
+  submit() {
+    Rails.fire(this.element, "submit");
   }
 }
