@@ -4,10 +4,11 @@
     <%= post.name %>
   </p>
 
-  <p class="my-5">
+  <h3 class="my-5">
     <strong class="block font-medium mb-1">Comments:</strong>
-    <%= post.content %>
-  </p>
+    <%= post.content %><br>
+    <p><%= post.created_at.strftime("Posted %a %m %b %Y at %H:%M") %></p>
+  </h3>
 
   <% if action_name != "show" %>
     <%= link_to "Show this post", post, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>

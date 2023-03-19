@@ -8,7 +8,7 @@ Rails.application.routes.draw do
           # end
     end
   resources :posts
-  root 'public#index'
+  root 'posts#index'
 
 
   # Defines the root path route ("/")
