@@ -1,0 +1,34 @@
+<div class="w-full">
+  <% if notice.present? %>
+    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
+  <% end %>
+
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-4xl">Posts</h1>
+    <%= link_to 'New post', new_post_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+  </div>
+
+  <div id="posts" class="min-w-full">
+    <%= render @posts %>
+  </div>
+</div>
+
+<div>
+  <h1 id="banner" class="font-bold text-4xl text-blue-500">Project Status</h1>
+    <% Post::STATUSES.each do |status| %>
+    <%= link_to status, posts_path(@posts, status: status)%>
+    <% end %>
+</div>
+
+
+<div id="options" data-controller="visibility">
+  <h1>Toggle Visibility</h1>
+  
+  <button data-action="visibility#showTargets">Show All Elements</button>
+  <button data-action="visibility#hideTargets">Hide All Elements</button>
+  <button data-action="visibility#toggleTargets">Toggle Element Visibility</button>
+    
+  <p data-visibility-target="hideable">The Flamboyent Thing #1<p/>
+  <p data-visibility-target="hideable" hidden>The Slightly Stealthy Thing #2<p/>
+</div>
+
