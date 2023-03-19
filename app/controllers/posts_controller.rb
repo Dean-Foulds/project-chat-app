@@ -6,21 +6,6 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  def toggle_completed
-    @posts.toggle! :Completed
-  end
-
-  def update_status
-    @post = Post.find(params[:id])
-    if params[:status].present? && Post::STATUSES.include?(params[:status].to_sym)
-      @post.update(status: params[:status])
-      redirect_to @post, notice: "Status changed to #{@post.status}"
-    else
-      redirect_to @post, alert: "Stop hacking"
-    end
-  end
-
-
   # GET /posts/1 or /posts/1.json
   def show
   end
