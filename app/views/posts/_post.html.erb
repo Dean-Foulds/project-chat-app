@@ -7,7 +7,7 @@
   <h3 class="my-5">
     <strong class="block font-medium mb-1">Comments:</strong>
     <%= post.content %><br>
-    <p><%= post.created_at.strftime("Posted %a %m %b %Y at %H:%M") %></p>
+    <small><%= post.created_at.strftime("Posted %a %m %b %Y at %H:%M") %></small>
   </h3>
 
   <% if action_name != "show" %>
