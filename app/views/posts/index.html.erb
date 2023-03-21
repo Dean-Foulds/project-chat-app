@@ -18,10 +18,15 @@
       <h2 data-visibility-target="hideable" hidden class="font-bold text-4xl text-blue-300">Project Ongoing<h2/>
       <br>
       <button class="rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium"  data-action="visibility#toggleTargets">Click to change status</button><br>
-      <%= link_to 'New post', new_post_path, class: "inline-block rounded-lg py-3 px-5 bg-blue-600 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]" %>
+      <%= link_to 'New post', new_post_path, class: "inline-block rounded-lg py-3 px-5 bg-blue-600 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]" %><br>
     </div>
 </div>
-<div>
+<div><% if user_signed_in? %> 
+ <div> Welcome <%= current_user.email %> </div> 
+  <%= button_to "Sign out", destroy_user_session_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium", method: :delete %> 
+<% else %>
+  <%= button_to "Sign in", new_user_session_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %> 
+<% end %></div>
 </div>
 
 
