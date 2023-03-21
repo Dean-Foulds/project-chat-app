@@ -22,7 +22,7 @@
     </div>
 </div>
 <div><% if user_signed_in? %> 
- <div> Welcome <%= current_user.email %> </div> 
+ <div class="text-blue-500 font-bold"> Welcome <%= current_user.email %></div> 
   <%= button_to "Sign out", destroy_user_session_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium", method: :delete %> 
 <% else %>
   <%= button_to "Sign in", new_user_session_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %> 
